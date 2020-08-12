@@ -12,9 +12,14 @@ public class UserService {
 	@Autowired
 	UserRepository repo;
 	
-	public User getUser() {
+	public User getUser()  {
 		User a= new User();
 		repo.save(a);
+		return a;
+	}
+	
+	public int sizeOfUsers() {
+		int a=(int)repo.count();
 		return a;
 	}
 

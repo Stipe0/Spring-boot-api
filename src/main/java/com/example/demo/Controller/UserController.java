@@ -19,8 +19,15 @@ public class UserController {
 	}
 		
 	@GetMapping("/user")
-	public User getUser() {
+	public User getUser() throws IllegalAccessException {
+		if(service.getUser().getId()==0) throw new IllegalAccessException();
+
 	return	service.getUser();
+	}
+	
+	@GetMapping("/numusers")
+	public int numberOfUsers() {
+		return service.sizeOfUsers();
 	}
 
 }
