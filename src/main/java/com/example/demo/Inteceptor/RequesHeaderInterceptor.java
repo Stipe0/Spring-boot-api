@@ -12,13 +12,13 @@ import com.example.demo.Exceptions.IllegalIputException;
 @Component
 public class RequesHeaderInterceptor extends HandlerInterceptorAdapter {
 
-	//@Override
-//	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-//			throws Exception {
-//		if(StringUtils.isEmpty(request.getPathInfo()))
-//			throw new IllegalIputException("exception from interceptor");
-//		return super.preHandle(request, response, handler);
-//	}
-	
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		// if((StringUtils.isEmpty(request.getHeader("key")))) { //without !
+
+		// throw new IllegalIputException("exception from interceptorr");}
+		return super.preHandle(request, response, handler);
+	}
 
 }
