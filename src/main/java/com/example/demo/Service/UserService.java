@@ -19,6 +19,11 @@ public class UserService {
 	public Optional<User> getUserByid(int id) {
 		return repo.findById(id);
 	}
+	
+	public User GetUserByName(String name) {
+		User tmp = repo.findByName(name);
+		return tmp;
+	}
 
 	public int sizeOfUsers() {
 		int a = (int) repo.count();
@@ -29,7 +34,7 @@ public class UserService {
 		User a = new User();
 		a.setId(id);
 		a.setJob(job);
-		a.setJob(job);
+		a.setName(name);
 		repo.save(a);
 		return a;
 	}
