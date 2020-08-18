@@ -21,15 +21,13 @@ import com.example.demo.Exceptions.NoUserFound;
 import com.example.demo.Model.User;
 import com.example.demo.Service.UserService;
 
-import net.bytebuddy.implementation.bytecode.Throw;
-
 /**
  * 
  * @author stipe
  *
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class UserController {
 	@Autowired
 	UserService service;

@@ -13,7 +13,7 @@ import com.example.demo.Inteceptor.RequesHeaderInterceptor;
 
 @Configuration
 public class UserConfig implements WebMvcConfigurer {
-	
+
 	@Autowired
 	private RequesHeaderInterceptor interceptor;
 
@@ -22,14 +22,11 @@ public class UserConfig implements WebMvcConfigurer {
 		// TODO Auto-generated method stub
 		registry.addInterceptor(interceptor);
 	}
+
 	@Conditional(UserCondition.class)
 	@Bean
-	public RestTemplate restTemplate(){
+	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-				 
-		
-	
-	
 
 }

@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Exceptions.NoUserFound;
 import com.example.demo.Model.User;
 import com.example.demo.Repository.UserRepository;
 

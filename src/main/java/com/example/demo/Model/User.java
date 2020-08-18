@@ -3,45 +3,61 @@ package com.example.demo.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
+@ApiModel(description = "Informations about User")
 public class User {
-	
+
+//	@ApiModelProperty(notes = "Unique identification number of User") With this line NumberFormatExcaption
 	@Id
 	private int id;
+	@ApiModelProperty(notes = "Name of User")
 	private String name;
+	@ApiModelProperty(notes = "Job of User")
 	private String job;
-	
+
 	public User() {
 		super();
 	}
+
 	public User(int id, String name, String job) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.job = job;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getJob() {
 		return job;
 	}
+
 	public void setJob(String job) {
 		this.job = job;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", job=" + job + ", id=" + id + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -51,6 +67,7 @@ public class User {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
